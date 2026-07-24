@@ -1,0 +1,71 @@
+# ----------------------------
+# Node.js / React
+# ----------------------------
+**/node_modules/
+frontend/dist/
+dist/
+build/
+
+# ----------------------------
+# Python
+# ----------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.pytest_cache/
+
+# Virtual Environment
+venv/
+.venv/
+
+# ----------------------------
+# Environment Variables
+# ----------------------------
+.env
+.env.*
+**/.env
+**/.env.*
+
+# ----------------------------
+# SQLite Database
+# ----------------------------
+evaluation.db
+*.db
+
+# ----------------------------
+# Logs
+# ----------------------------
+logs/
+*.log
+
+# ----------------------------
+# VS Code
+# ----------------------------
+.vscode/
+
+# ----------------------------
+# Cache
+# ----------------------------
+.cache/
+.vite/
+
+# ----------------------------
+# Reports (Generated)
+# ----------------------------
+reports/*.pdf
+reports/*.csv
+reports/*.json
+
+# ----------------------------
+# AI Evaluation Results
+# ----------------------------
+evaluation_results/
+datasets/generated/
+
+# ----------------------------
+# Operating System
+# ----------------------------
+.DS_Store
+Thumbs.db
