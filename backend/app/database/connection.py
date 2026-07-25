@@ -1,8 +1,16 @@
 from sqlalchemy import create_engine
+from app.core.config import settings
 
-DATABASE_URL = "sqlite:///./evaluation.db"
+DATABASE_URL = (
+    f"mysql+pymysql://"
+    f"{settings.DB_USER}:{settings.DB_PASSWORD}"
+    f"@{settings.DB_HOST}:{settings.DB_PORT}"
+    f"/{settings.DB_NAME}"
+)
 
 engine = create_engine(
     DATABASE_URL,
-    connect_args={"check_same_thread": False}
+    pool_pre_ping=True,
+    pool_recycle=3600,
+    echo=False
 )
