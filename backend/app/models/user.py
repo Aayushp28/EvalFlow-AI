@@ -1,6 +1,5 @@
-from sqlalchemy import Column
-from sqlalchemy import Integer
-from sqlalchemy import String
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.orm import relationship
 
 from app.database.base import Base
 
@@ -9,10 +8,12 @@ class User(Base):
     __tablename__ = "users"
 
     id = Column(Integer, primary_key=True, index=True)
+    name = Column(String(100), nullable=False)
+    email = Column(String(100), unique=True, nullable=False)
+    password = Column(String(255), nullable=False)
 
-    name = Column(String, nullable=False)
-
-    email = Column(String, unique=True, nullable=False)
-
-    password = Column(String, nullable=False)
-
+    datasets = relationship(
+        "Dataset",
+        back_populates="owner",
+        cascade="all, delete-orphan"
+    )
