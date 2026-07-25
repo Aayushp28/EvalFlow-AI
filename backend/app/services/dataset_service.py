@@ -61,3 +61,71 @@ def upload_dataset(
     db.refresh(dataset)
 
     return dataset
+
+def get_user_datasets(
+    db: Session,
+    current_user: User
+):
+    return (
+        db.query(Dataset)
+        .filter(Dataset.owner_id == current_user.id)
+        .order_by(Dataset.upload_date.desc())
+        .all()
+    )
+
+def get_dataset_by_id(
+    db: Session,
+    dataset_id: int,
+    current_user: User
+):
+    dataset = (
+        db.query(Dataset)
+        .filter(
+            Dataset.id == dataset_id,
+            Dataset.owner_id == current_user.id
+        )
+        .first()
+    )
+
+    if not dataset:
+        raise HTTPException(
+            status_code=404,
+            detail="Dataset not found."
+        )
+
+    return dataset
+
+def delete_dataset(
+    db: Session,
+    dataset_id: int,
+    current_user: User
+):
+    dataset = (
+        db.query(Dataset)
+        .filter(
+            Dataset.id == dataset_id,
+            Dataset.owner_id == current_user.id
+        )
+        .first()
+    )
+
+    if not dataset:
+        raise HTTPException(
+            status_code=404,
+            detail="Dataset not found."
+        )
+
+    file_path = os.path.join(
+        UPLOAD_FOLDER,
+        dataset.filename
+    )
+
+    if os.path.exists(file_path):
+        os.remove(file_path)
+
+    db.delete(dataset)
+    db.commit()
+
+    return {
+        "message": "Dataset deleted successfully."
+    }
