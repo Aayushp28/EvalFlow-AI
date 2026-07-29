@@ -33,3 +33,9 @@ class Dataset(Base):
         "User",
         back_populates="datasets"
     )
+
+    evaluations = relationship(
+    "Evaluation",
+    back_populates="dataset",
+    cascade="all, delete-orphan"
+)

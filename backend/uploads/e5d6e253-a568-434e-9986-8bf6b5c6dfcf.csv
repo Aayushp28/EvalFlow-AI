@@ -1,0 +1,51 @@
+prompt,category
+What is Artificial Intelligence?,AI
+Explain Machine Learning in simple terms.,AI
+What is Deep Learning?,AI
+Differentiate supervised and unsupervised learning.,AI
+What is FastAPI?,Backend
+What is REST API?,Backend
+Explain JWT authentication.,Security
+What is SQLAlchemy ORM?,Database
+Difference between SQL and NoSQL databases.,Database
+Explain database normalization.,Database
+What is Python?,Programming
+Explain object-oriented programming.,Programming
+What are Python decorators?,Programming
+Difference between list and tuple in Python.,Programming
+What is multithreading?,Programming
+Explain Docker and its benefits.,DevOps
+What is CI/CD?,DevOps
+What is Git Flow?,DevOps
+What is Kubernetes?,DevOps
+Explain cloud computing.,Cloud
+What is AWS?,Cloud
+What is React?,Frontend
+What is virtual DOM?,Frontend
+Explain React Hooks.,Frontend
+Difference between GET and POST requests.,Web
+What is CORS?,Web
+Explain HTTPS.,Security
+What is encryption?,Security
+How does OAuth2 work?,Security
+Explain microservices architecture.,Architecture
+What is load balancing?,Architecture
+What is caching?,Architecture
+Explain Redis.,Database
+What is prompt engineering?,LLM
+What is a Large Language Model?,LLM
+How are LLMs evaluated?,LLM
+Explain hallucinations in AI.,LLM
+What are embeddings?,LLM
+What is Retrieval-Augmented Generation (RAG)?,LLM
+Explain vector databases.,LLM
+What is sentiment analysis?,NLP
+Explain tokenization in NLP.,NLP
+What is Named Entity Recognition?,NLP
+What is precision and recall?,ML Metrics
+Explain F1-score.,ML Metrics
+What is latency in AI systems?,Performance
+How do you measure API performance?,Performance
+Explain horizontal scaling.,Architecture
+What is observability?,DevOps
+What is rate limiting?,Security
