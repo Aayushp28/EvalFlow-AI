@@ -1,6 +1,6 @@
 import os
 import uuid
-
+from app.core.config import settings
 from fastapi import UploadFile, HTTPException
 from sqlalchemy.orm import Session
 
@@ -8,7 +8,7 @@ from app.models.dataset import Dataset
 from app.models.user import User
 
 
-UPLOAD_FOLDER = "uploads"
+
 
 ALLOWED_FILE_TYPES = [
     "text/csv",
@@ -29,16 +29,16 @@ def upload_dataset(
         )
 
     # Create uploads folder if it doesn't exist
-    os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+    os.makedirs(settings.UPLOAD_FOLDER, exist_ok=True)
 
     # Generate unique filename
     extension = os.path.splitext(file.filename)[1]
     unique_filename = f"{uuid.uuid4()}{extension}"
 
     file_path = os.path.join(
-        UPLOAD_FOLDER,
-        unique_filename
-    )
+    settings.UPLOAD_FOLDER,
+    unique_filename
+)
 
     # Save file to disk
     with open(file_path, "wb") as buffer:
@@ -116,9 +116,9 @@ def delete_dataset(
         )
 
     file_path = os.path.join(
-        UPLOAD_FOLDER,
-        dataset.filename
-    )
+    settings.UPLOAD_FOLDER,
+    dataset.filename
+)
 
     if os.path.exists(file_path):
         os.remove(file_path)
