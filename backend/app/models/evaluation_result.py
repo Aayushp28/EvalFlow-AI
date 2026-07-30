@@ -15,7 +15,11 @@ from app.database.base import Base
 class EvaluationResult(Base):
     __tablename__ = "evaluation_results"
 
-    id = Column(Integer, primary_key=True, index=True)
+    id = Column(
+        Integer,
+        primary_key=True,
+        index=True
+    )
 
     evaluation_id = Column(
         Integer,
@@ -60,6 +64,11 @@ class EvaluationResult(Base):
 
     score = Column(
         Float,
+        nullable=True
+    )
+
+    feedback = Column(
+        Text,
         nullable=True
     )
 
