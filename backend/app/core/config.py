@@ -63,5 +63,8 @@ class Settings:
         "gemini-3.5-flash"
     )
 
-
+ENABLE_LLM_JUDGE = (
+    os.getenv("ENABLE_LLM_JUDGE", "False")
+    .lower() == "true"
+)
 settings = Settings()

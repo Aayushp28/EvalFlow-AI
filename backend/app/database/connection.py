@@ -6,11 +6,15 @@ DATABASE_URL = (
     f"{settings.DB_USER}:{settings.DB_PASSWORD}"
     f"@{settings.DB_HOST}:{settings.DB_PORT}"
     f"/{settings.DB_NAME}"
+    f"?charset=utf8mb4"
 )
 
 engine = create_engine(
     DATABASE_URL,
     pool_pre_ping=True,
     pool_recycle=3600,
-    echo=False
+    echo=False,
+    connect_args={
+        "charset": "utf8mb4"
+    }
 )
