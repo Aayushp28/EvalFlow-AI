@@ -64,12 +64,7 @@ def count_prompts(dataset: Dataset) -> tuple[int, str]:
         settings.UPLOAD_FOLDER,
         dataset.filename
     )
-    print("=" * 60)
-    print("UPLOAD_FOLDER:", settings.UPLOAD_FOLDER)
-    print("DATASET FILENAME:", dataset.filename)
-    print("FULL PATH:", file_path)
-    print("FILE EXISTS:", os.path.exists(file_path))
-    print("=" * 60)
+   
     df = pd.read_csv(file_path)
 
     possible_columns = [
@@ -93,3 +88,41 @@ def count_prompts(dataset: Dataset) -> tuple[int, str]:
         )
 
     return len(df), prompt_column
+
+from app.models.evaluation_result import EvaluationResult
+
+
+def get_evaluation_details(
+    db: Session,
+    evaluation_id: int,
+    current_user: User,
+):
+    """
+    Returns one evaluation with all of its results.
+    """
+
+    evaluation = (
+        db.query(Evaluation)
+        .filter(
+            Evaluation.id == evaluation_id,
+            Evaluation.user_id == current_user.id
+        )
+        .first()
+    )
+
+    if not evaluation:
+        return None
+
+    results = (
+        db.query(EvaluationResult)
+        .filter(
+            EvaluationResult.evaluation_id == evaluation.id
+        )
+        .order_by(EvaluationResult.id)
+        .all()
+    )
+
+    return {
+        "evaluation": evaluation,
+        "results": results
+    }    
