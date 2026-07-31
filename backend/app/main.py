@@ -4,6 +4,8 @@ from app.database.init_db import init_db
 from app.api.v1.auth import router as auth_router
 from app.api.v1.datasets import router as datasets_router
 from app.api.v1 import evaluation
+from app.api.v1.analytics import router as analytics_router
+from app.api.v1.history import router as history_router
 app = FastAPI(
     title="EvalFlow AI API",
     version="1.0.0"
@@ -27,3 +29,9 @@ def home():
     return {
         "message": "Welcome to EvalFlow AI"
     }
+
+app.include_router(analytics_router)
+app.include_router(
+    history_router,
+    prefix="/api/v1"
+)

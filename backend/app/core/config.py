@@ -53,18 +53,26 @@ class Settings:
     DB_NAME = os.getenv("DB_NAME")
 
     # ======================================================
-    # Gemini AI Configuration
+    # Gemini Configuration
     # ======================================================
 
     GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
     GEMINI_MODEL = os.getenv(
         "GEMINI_MODEL",
-        "gemini-3.5-flash"
+        "gemini-3.5-flash-lite"
     )
 
-ENABLE_LLM_JUDGE = (
-    os.getenv("ENABLE_LLM_JUDGE", "False")
-    .lower() == "true"
-)
+    # ======================================================
+    # Evaluation Configuration
+    # ======================================================
+
+    ENABLE_LLM_JUDGE = (
+        os.getenv(
+            "ENABLE_LLM_JUDGE",
+            "False"
+        ).lower() == "true"
+    )
+
+
 settings = Settings()

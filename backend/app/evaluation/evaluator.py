@@ -62,7 +62,6 @@ class Evaluator:
     ):
 
         provider = GeminiProvider()
-        
 
         prompts = self.load_prompts()
 
@@ -71,6 +70,7 @@ class Evaluator:
         print("\n===================================")
         print("Starting Evaluation")
         print("===================================")
+        print(f"Model : {settings.GEMINI_MODEL}")
         print(f"Total Prompts : {total_prompts}\n")
 
         evaluation.status = "Running"
@@ -106,7 +106,6 @@ class Evaluator:
                     total_tokens
                 )
 
-                # Optional LLM Judge
                 score = None
                 feedback = None
 
