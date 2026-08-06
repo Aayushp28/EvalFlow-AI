@@ -1,265 +1,419 @@
-🚀 EvalFlow AI
+# 🚀 EvalFlow AI
+
 AI-Powered LLM Evaluation Platform
 
-A Full-Stack AI Platform for Automated Large Language Model (LLM) Evaluation, Analytics, and Performance Benchmarking
+> **A Full-Stack AI Platform for Automated Large Language Model (LLM) Evaluation, Analytics, and Performance Benchmarking**
 
-🌟 Overview
+# 🌟 Overview
 
-EvalFlow AI is a Full-Stack AI-powered LLM Evaluation Platform built to automate the benchmarking of Large Language Models (LLMs).
+EvalFlow AI is a full-stack AI-powered LLM Evaluation Platform designed to automate the benchmarking of Large Language Models (LLMs). Instead of manually testing prompts one by one, users can upload a CSV dataset containing hundreds of prompts and automatically evaluate them using Google's Gemini AI.
 
-Instead of manually testing prompts one by one, users simply upload a CSV dataset containing prompts, choose an AI model, and the platform automatically evaluates every prompt while collecting valuable performance metrics.
+The platform measures response latency, token usage, estimated API cost, and stores complete evaluation history. It also provides an analytics dashboard, PDF report generation, search, filtering, pagination, and secure JWT-based authentication.
 
-The platform securely stores evaluation history, generates analytics dashboards, exports professional PDF reports, and follows a scalable layered architecture suitable for enterprise applications.
+EvalFlow AI follows a modular layered architecture, making it scalable, maintainable, and easy to extend with future AI providers and enterprise features.
 
-✨ Key Features
-🔐 Authentication
-JWT Authentication
-Secure Login & Registration
-Password Hashing (bcrypt)
-Protected REST APIs
-Authorization & Ownership Verification
-📂 Dataset Management
-CSV Upload
-Drag & Drop Upload
-Automatic Prompt Detection
-Dataset Validation
-Secure Dataset Storage
-Dataset History
-🤖 AI Evaluation Engine
-Google Gemini Integration
-Batch Prompt Evaluation
-Automatic Response Generation
-Latency Measurement
-Token Usage Tracking
-Estimated Cost Calculation
-Retry Logic
-Error Handling
-📊 Analytics Dashboard
-Total Evaluations
-Completed Evaluations
-Pending Evaluations
-Failed Evaluations
-Average Latency
-Token Usage
-Estimated Cost
-Success Rate
-Evaluation History
-📄 PDF Report Generation
+---
 
-Generate professional downloadable reports including:
+# ✨ Features
 
-Evaluation Summary
-Dataset Details
-AI Responses
-Latency Statistics
-Token Usage
-Estimated Cost
-Performance Summary
-🔍 Search & Pagination
-Search Evaluations
-Filter Results
-Server-side Pagination
-Sorting
-Fast Retrieval
-🚀 Continuous Integration
+## 🔐 Authentication
 
-Implemented using GitHub Actions
+- User Registration
+- Secure Login
+- JWT Authentication
+- Password Hashing (bcrypt)
+- Protected REST APIs
+- Authorization & Access Control
 
-Automatic
+---
 
-Dependency Installation
-Build Verification
-Workflow Validation
-🏗️ Architecture
-                     React Frontend
-                            │
-                            ▼
-                     Axios REST APIs
-                            │
-                            ▼
-                     FastAPI Backend
-                            │
-         ┌──────────────────┼──────────────────┐
-         ▼                  ▼                  ▼
- Authentication      Dataset Service    Evaluation Service
-                                               │
-                                               ▼
-                                        Evaluation Engine
-                                               │
-                                               ▼
+## 📂 Dataset Management
+
+- CSV Upload
+- Drag & Drop Upload
+- Automatic Prompt Column Detection
+- Dataset Validation
+- Dataset Ownership Verification
+- Dataset History
+
+---
+
+## 🤖 AI Evaluation Engine
+
+- Google Gemini Integration
+- Batch Prompt Evaluation
+- Sequential Processing
+- Retry Logic for Rate Limits
+- Exception Handling
+- Response Storage
+- Token Counting
+- Latency Measurement
+- Cost Estimation
+
+---
+
+## 📊 Analytics Dashboard
+
+- Total Evaluations
+- Completed Evaluations
+- Pending Evaluations
+- Failed Evaluations
+- Average Latency
+- Total Token Usage
+- Estimated Cost
+- Evaluation History
+
+---
+
+## 📄 PDF Report Generation
+
+Generate downloadable reports including:
+
+- Evaluation Summary
+- Dataset Information
+- Model Information
+- Prompt Responses
+- Latency Statistics
+- Token Usage
+- Estimated Cost
+- Overall Summary
+
+---
+
+## 🔍 Search, Filter & Pagination
+
+- Search Evaluations
+- Filter by Status
+- Server-side Pagination
+- Sorting
+- Fast Data Retrieval
+
+---
+
+## 🚀 CI Pipeline
+
+GitHub Actions automatically performs:
+
+- Dependency Installation
+- Project Validation
+- Build Verification
+
+---
+
+# 🏗️ System Architecture
+
+```text
+                    React Frontend
+                           │
+                           ▼
+                    REST APIs (Axios)
+                           │
+                           ▼
+                    FastAPI Backend
+                           │
+          ┌────────────────┼────────────────┐
+          ▼                ▼                ▼
+ Authentication     Dataset Service   Evaluation Service
+                                              │
+                                              ▼
+                                       Evaluation Engine
+                                              │
+                                              ▼
                                          Google Gemini
-                                               │
-                                               ▼
-                                             MySQL
-🛠 Tech Stack
-Frontend
-React.js
-Vite
-Tailwind CSS
-Axios
-React Router
-Backend
-FastAPI
-SQLAlchemy ORM
-JWT Authentication
-Pydantic
-bcrypt
-AI
-Google Gemini API
-Prompt Evaluation Engine
-Token Counter
-Cost Estimation
-Database
-MySQL
-DevOps
-Git
-GitHub
-GitHub Actions
-📂 Project Structure
-EvalFlow-AI
+                                              │
+                                              ▼
+                                           MySQL
+```
 
-├── backend
-│   ├── app
-│   │   ├── api
-│   │   ├── core
-│   │   ├── database
-│   │   ├── evaluation
-│   │   ├── models
-│   │   ├── schemas
-│   │   ├── services
-│   │   ├── uploads
-│   │   └── main.py
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+
+- React.js
+- Vite
+- Tailwind CSS
+- Axios
+- React Router
+
+---
+
+## Backend
+
+- FastAPI
+- SQLAlchemy ORM
+- JWT Authentication
+- Pydantic
+- bcrypt
+
+---
+
+## AI & Machine Learning
+
+- Google Gemini API
+- Prompt Evaluation Engine
+- Token Counter
+- Cost Estimator
+
+---
+
+## Database
+
+- MySQL
+
+---
+
+## DevOps
+
+- Git
+- GitHub
+- GitHub Actions (CI)
+
+---
+
+# 📂 Project Structure
+
+```text
+EvalFlow-AI/
+
+├── backend/
 │
-├── frontend
-│   ├── src
-│   │   ├── components
-│   │   ├── pages
-│   │   ├── services
-│   │   ├── hooks
-│   │   └── App.jsx
+│   ├── app/
+│   │
+│   ├── api/
+│   ├── core/
+│   ├── database/
+│   ├── evaluation/
+│   ├── models/
+│   ├── schemas/
+│   ├── services/
+│   ├── uploads/
+│   └── main.py
 │
-├── .github
-│   └── workflows
+├── frontend/
+│
+│   ├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── services/
+│   ├── hooks/
+│   └── App.jsx
+│
+├── .github/
+│   └── workflows/
 │
 └── README.md
-⚙️ Workflow
+```
+
+---
+
+# ⚙️ Workflow
+
+```text
 User Login
-     │
-     ▼
-Upload Dataset
-     │
-     ▼
-Validate CSV
-     │
-     ▼
-Extract Prompts
-     │
-     ▼
-Gemini Evaluation
-     │
-     ▼
-Measure Latency
-     │
-     ▼
-Count Tokens
-     │
-     ▼
-Estimate Cost
-     │
-     ▼
+      │
+      ▼
+Upload CSV Dataset
+      │
+      ▼
+Dataset Validation
+      │
+      ▼
+Prompt Extraction
+      │
+      ▼
+Gemini AI Evaluation
+      │
+      ▼
+Latency Measurement
+      │
+      ▼
+Token Counting
+      │
+      ▼
+Cost Estimation
+      │
+      ▼
 Store Results
-     │
-     ▼
+      │
+      ▼
 Analytics Dashboard
-     │
-     ▼
+      │
+      ▼
 Generate PDF Report
-📊 Metrics Captured
+```
 
-For every evaluated prompt, EvalFlow AI records:
+---
 
-AI Response
-Response Latency
-Input Tokens
-Output Tokens
-Total Tokens
-Estimated API Cost
-Evaluation Status
-🔒 Security
-JWT Authentication
-bcrypt Password Hashing
-SQLAlchemy ORM
-Protected APIs
-Parameterized Queries
-Environment Variables
-Dataset Ownership Verification
-⚡ Performance Optimizations
-Layered Architecture
-Modular Service Layer
-Server-side Pagination
-Optimized SQL Queries
-Efficient Database Relationships
-Retry Logic
-Batch Evaluation
-📈 Dashboard Analytics
+# 🗄 Database Schema
+
+```text
+Users
+  │
+  │ 1:N
+  ▼
+Datasets
+  │
+  │ 1:N
+  ▼
+Evaluations
+  │
+  │ 1:N
+  ▼
+Evaluation Results
+```
+
+---
+
+# 📈 Metrics Captured
+
+For every prompt, EvalFlow AI records:
+
+- AI Response
+- Response Latency
+- Input Tokens
+- Output Tokens
+- Total Tokens
+- Estimated API Cost
+- Evaluation Status
+
+---
+
+# 🔒 Security Features
+
+- JWT Authentication
+- bcrypt Password Hashing
+- Protected REST APIs
+- SQLAlchemy ORM
+- Parameterized Queries
+- Input Validation
+- Dataset Ownership Verification
+- Environment Variables
+
+---
+
+# ⚡ Performance Optimizations
+
+- Server-side Pagination
+- Optimized SQL Queries
+- Layered Architecture
+- Modular Service Layer
+- Retry Logic
+- Efficient Database Relationships
+- Token Counting
+- Cost Estimation
+
+---
+
+# 📊 Dashboard Analytics
 
 The dashboard provides:
 
-Total Evaluations
-Completed Evaluations
-Pending Evaluations
-Average Latency
-Token Usage
-Estimated Cost
-Success Rate
-Recent Evaluation History
-📄 PDF Export
+- Total Evaluations
+- Completed Evaluations
+- Pending Evaluations
+- Failed Evaluations
+- Average Latency
+- Estimated Token Usage
+- Estimated API Cost
+- Evaluation History
 
-Generate professional reports containing:
+---
 
-Evaluation Summary
-Dataset Information
-Model Information
-Prompt Responses
-Latency Statistics
-Token Usage
-Cost Analysis
-🚀 CI Pipeline
+# 📄 PDF Export
+
+Generate professional evaluation reports containing:
+
+- Evaluation Summary
+- Dataset Details
+- Provider Information
+- Model Details
+- Prompt Responses
+- Latency Statistics
+- Token Usage
+- Cost Estimation
+
+---
+
+# 🚀 CI Pipeline
+
+GitHub Actions automatically performs:
+
+```text
 Git Push
-    │
-    ▼
+     │
+     ▼
 GitHub Actions
-    │
-    ▼
+     │
+     ▼
+Checkout Repository
+     │
+     ▼
 Install Dependencies
-    │
-    ▼
-Validate Project
-    │
-    ▼
+     │
+     ▼
+Project Validation
+     │
+     ▼
 Build Verification
-📸 Screenshots
+```
 
-Replace these images with your own screenshots.
+---
 
-🔐 Login Page
-<img src="docs/screenshots/login.png" width="100%"/>
-📊 Dashboard
-<img src="docs/screenshots/dashboard.png" width="100%"/>
-📂 Dataset Upload
-<img src="docs/screenshots/upload.png" width="100%"/>
-🤖 Evaluation
-<img src="docs/screenshots/evaluation.png" width="100%"/>
-📈 Analytics
-<img src="docs/screenshots/analytics.png" width="100%"/>
-📄 PDF Report
-<img src="docs/screenshots/report.png" width="100%"/>
-🚀 Getting Started
-Clone Repository
+# 📸 Screenshots
+
+## 🔐 Login Page
+
+<img src="docs/screenshots/login.png" width="100%">
+
+---
+
+## 📊 Dashboard
+
+<img src="docs/screenshots/dashboard.png" width="100%">
+
+---
+
+## 📂 Dataset Upload
+
+<img src="docs/screenshots/upload.png" width="100%">
+
+---
+
+## 🤖 Evaluation
+
+<img src="docs/screenshots/evaluation.png" width="100%">
+
+---
+
+## 📈 Analytics
+
+<img src="docs/screenshots/analytics.png" width="100%">
+
+---
+
+## 📄 PDF Report
+
+<img src="docs/screenshots/report.png" width="100%">
+
+---
+
+# 🚀 Getting Started
+
+## Clone Repository
+
+```bash
 git clone https://github.com/yourusername/EvalFlow-AI.git
 
 cd EvalFlow-AI
-Backend
+```
+
+---
+
+## Backend Setup
+
+```bash
 cd backend
 
 python -m venv venv
@@ -269,16 +423,27 @@ venv\Scripts\activate
 pip install -r requirements.txt
 
 uvicorn app.main:app --reload
-Frontend
+```
+
+---
+
+## Frontend Setup
+
+```bash
 cd frontend
 
 npm install
 
 npm run dev
-Environment Variables
+```
 
-Create a .env file inside the backend directory.
+---
 
+## Environment Variables
+
+Create a `.env` file inside the backend folder.
+
+```env
 SECRET_KEY=your_secret_key
 
 ALGORITHM=HS256
@@ -299,61 +464,95 @@ UPLOAD_FOLDER=backend/uploads
 
 GEMINI_API_KEY=your_gemini_api_key
 
-GEMINI_MODEL=gemini-2.5-flash
-🎯 Project Highlights
-✅ Full-Stack AI Application
-✅ JWT Authentication
-✅ Google Gemini Integration
-✅ Automated Prompt Evaluation
-✅ Analytics Dashboard
-✅ PDF Report Generation
-✅ Token Usage Tracking
-✅ Latency Measurement
-✅ Estimated Cost Calculation
-✅ Search & Pagination
-✅ CI Pipeline with GitHub Actions
-✅ Layered Enterprise Architecture
-📌 Future Enhancements
-Multi-LLM Support (OpenAI, Claude, Llama)
-AI Judge for Automatic Response Scoring
-Retrieval-Augmented Generation (RAG)
-Redis Caching
-Background Workers
-Docker Support
-Kubernetes Deployment
-WebSocket Live Progress
-Team Collaboration
-Role-Based Access Control (RBAC)
-🎓 Skills Demonstrated
-Full Stack Development
-FastAPI
-React.js
-REST API Development
-SQLAlchemy ORM
-JWT Authentication
-MySQL
-AI Integration
-Google Gemini API
-Prompt Engineering
-LLM Evaluation
-Analytics Dashboard Development
-CI/CD with GitHub Actions
-Software Architecture
-Performance Optimization
-🤝 Contributing
+GEMINI_MODEL=gemini-2.5-flash-lite
+```
 
-Contributions are welcome.
+---
 
-Feel free to fork this repository and submit a Pull Request.
+# 🎯 Project Highlights
 
-📄 License
+- ✅ Full Stack AI-Powered Web Application
+- ✅ JWT-Based Authentication
+- ✅ AI Integration with Google Gemini
+- ✅ Automated Prompt Evaluation
+- ✅ Response Latency Measurement
+- ✅ Token Usage Tracking
+- ✅ Estimated Cost Calculation
+- ✅ Analytics Dashboard
+- ✅ PDF Report Generation
+- ✅ Search, Filtering & Pagination
+- ✅ Modular Layered Architecture
+- ✅ CI Pipeline with GitHub Actions
 
-This project is licensed under the MIT License.
+---
 
-👨‍💻 Author
+# 📌 Future Roadmap
 
-Aayush Pant
+- Multi-LLM Support (OpenAI, Claude, Llama)
+- AI Judge for Response Scoring
+- Retrieval-Augmented Generation (RAG)
+- Semantic Search
+- Redis Caching
+- Background Workers
+- Docker Deployment
+- Kubernetes Orchestration
+- WebSocket Live Progress
+- Cloud Storage Integration
+- Role-Based Access Control (RBAC)
+- Team Collaboration Workspace
+
+---
+
+# 🎓 Skills Demonstrated
+
+- Full Stack Development
+- FastAPI
+- React.js
+- REST API Development
+- JWT Authentication
+- SQLAlchemy ORM
+- Database Design
+- MySQL
+- Google Gemini API
+- Prompt Engineering
+- LLM Evaluation
+- Analytics Dashboard Development
+- PDF Report Generation
+- Git & GitHub
+- GitHub Actions (CI)
+- Software Architecture
+- Performance Optimization
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome!
+
+If you'd like to improve EvalFlow AI, feel free to fork the repository, create a feature branch, and submit a pull request.
+
+---
+
+# 📄 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+# 👨‍💻 Author
+
+**Aayush Pant**
 
 B.Tech – Computer Science & Engineering
 
 Graphic Era Hill University
+
+📧 Email: your-email@example.com
+
+🔗 LinkedIn: https://linkedin.com/in/your-profile
+
+💻 GitHub: https://github.com/yourusername
+
+---
+
+# ⭐ If you found this project useful, don't forget to Star the repository!
